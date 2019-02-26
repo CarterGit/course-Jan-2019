@@ -5,7 +5,28 @@
 
     <aop:aspectj-autoproxy/>
 
+    <bean id="userAspect" class="com.bht.aop.aspect.UserAspect"></bean>
 
+    <bean id="userBean" class="com.bht.aop.model.User">
+        <!--<property name="name" value="Bruce Lee"/>-->
+    </bean>
 
+    <bean id="userService" class="com.bht.aop.service.UserService">
+        <property name="user" ref="userBean"/>
+    </bean>
+
+    <aop:config>
+        <aop:aspect id="aopAspectId" ref="userAspect">
+            <aop:before method="doBeforeCheck" pointcut-ref="pointcutId"/>
+            <aop:pointcut id="pointcutId" expression="execution(* com.bht.aop.model.User.set*(..))"/>
+        </aop:aspect>
+    </aop:config>
+
+    <aop:config>
+        <aop:aspect id="aopAspectId" ref="userAspect">
+            <aop:before method="doBeforeCheck" pointcut-ref="pointcutId"/>
+            <aop:pointcut id="pointcutId" expression="execution(* com.bht.aop.model.User.set*(..))"/>
+        </aop:aspect>
+    </aop:config>
 
 </beans>

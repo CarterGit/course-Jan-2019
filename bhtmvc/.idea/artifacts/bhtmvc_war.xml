@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="bhtmvc:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="bhtmvcexample.war">
-      <element id="artifact" artifact-name="bhtmvc:war exploded" />
-    </root>
-  </artifact>
-</component>
